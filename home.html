@@ -5924,8 +5924,8 @@ const entourageMembers = [
     {name:"James Horton",role:"Ring Bearer",group:"Secondary Sponsors",password:"James2027"},
     {name:"Ms. Clarine Joy Asuncion",role:"Bridesmaid",group:"Bridesmaids",password:"Clarine2027"},
     {name:"Ms. Aleya Alexis Balanza",role:"Bridesmaid",group:"Bridesmaids",password:"Aleya2027"},
-    {name:"Mr. Alton Giles", role:"Groomsmen",group:"Groomsmen",password:"Ton2027"},
-    {name:"Mr. Ruel Collado",role:"Groomsmen",group"Groomsmen",password:"Ruel2027"}
+    {name:"Mr. Alton Giles",role:"Groomsmen",group:"Groomsmen",password:"Ton2027"},
+    {name:"Mr. Ruel Collado",role:"Groomsmen",group:"Groomsmen",password:"Ruel2027"}
 ];
 
 const personalizedMessages = {
@@ -6077,6 +6077,10 @@ function getPersonalizedPalette(person){
         return entouragePalettes.bestMan;
     }
 
+    if(person.role === "Groomsmen") {
+        return entouragePalettes.secondaryMr;
+    }
+
     if(person.role === "Bridesmaid" || person.group === "Bridesmaids"){
         return entouragePalettes.bridesmaids;
     }
@@ -6116,6 +6120,10 @@ function getPaletteDescription(person){
 
     if(person.group === "Principal Sponsors"){
         return "Sample shades to choose from;";
+    }
+
+    if(person.role === "Groomsmen") {
+        return "Groomsmen: Sage Green & Nude";
     }
 
     if(person.group === "Secondary Sponsors" && /^Mr\./i.test(person.name)){
@@ -6438,6 +6446,7 @@ const roleBasedInstructions = {
     "Flower Girl":{prep:"Confirm dress, shoes, basket or petals with a parent/guardian and practice the walking pace and route.",focus:"Processional entrance, petals, designated position, and staying with the assigned adult.",items:["Walk at a calm pace and follow the designated route.","Scatter petals only where and when instructed.","After the processional, stay with the assigned adult for photos and ceremony directions."]},
     "Ring Bearer":{prep:"Confirm outfit and ring-bearing arrangement with the parents/coordinator. Practice the processional route and keep the rings secure if entrusted with them.",focus:"Ring security, processional, handoff, and positioning.",items:["Keep the rings secure and do not remove them unless instructed.","Follow the assigned processional order and walking pace.","Complete the handoff only at the designated moment and follow the coordinator afterward."]},
     "Best Man":{prep:"Stay closely coordinated with the groom, keep rings or assigned items secure when requested, and help the groom stay on schedule.",focus:"Groom support, rings, coordination, ceremony assistance, photos, and reception responsibilities.",items:["Check in with the groom during final preparations and help keep the schedule moving.","Keep the rings or assigned items secure and know the handoff plan.","Stay available for ceremony, photos, reception transitions, and last-minute coordination."]},
+    "Groomsmen":{prep:"Complete your attire and accessories, stay with the groomsmen group during preparations and photos, and follow the coordinator’s cues throughout the ceremony and reception.",focus:"Groomsmen preparation, processional, group photos, ceremony positioning, and reception responsibilities.",items:["Arrive prepared and complete your final attire and accessory check.","Stay with the groomsmen group during preparation, first-look/detail photos, and entourage photos.","Follow the coordinator’s cue for the processional and remain in your assigned ceremony position.","Stay available for group photos, reception entrances, program moments, and last-minute instructions."]},
     "Maid of Honor":{prep:"Stay closely coordinated with the bride and help with the emergency kit, bouquet/personal items, dress adjustments, communication, and last-minute details.",focus:"Bride support, emergency kit, bridesmaid coordination, ceremony responsibilities, photos, and reception assistance.",items:["Keep the bride's emergency essentials nearby and discreetly accessible.","Coordinate bridesmaids for lineup, movement, and photo calls.","Stay attentive to the bride throughout the ceremony and reception transitions."]},
     "Bridesmaid":{prep:"Confirm dress, shoes, hair and makeup plan, and bouquet. Stay with the bridal party for lineup, photos, and reception transitions.",focus:"Procession order, positioning, bride support, photos, and reception responsibilities.",items:["Know your exact processional order and ceremony position before lineup.","Stay attentive to the bride and bridal party during movement and photos.","Keep your bouquet and personal items organized and follow coordinator cues."]}
 };
