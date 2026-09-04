@@ -6538,8 +6538,8 @@ const roleBasedInstructions = {
 function getPersonalizedRoleInstructions(person){
     if(person.group === "Parents of the Groom" || person.group === "Parents of the Bride"){
         return {
-            title:"Your Personalized Role Instructions",
-            prep:"As a parent, your role is to support the couple, follow family and ceremony coordination, and remain available for important family moments.",
+            title:"🌸",
+            prep:"Remain available for important family moments.",
             items:[
                 "Stay available for family preparation updates, photos, and coordinator instructions.",
                 "Follow your assigned seating, processional, and ceremony cues.",
@@ -6660,7 +6660,7 @@ function renderEntourageProfile(person){
               '<div class="entourage-personal-message entourage-message-faith">' +
                 '<div class="icon"></div>' +
                 '<h4>' +
-                    (groupKey === "parents" ? "❤️" : "A Personal Note") +
+                    (groupKey === "parents" ? "❤️" : "❤️") +
                 '</h4>' +
                 '<p>' + escapeEntourageHTML(personalMessage) + '</p>' +
               '</div>'
@@ -6706,6 +6706,3 @@ function renderEntourageProfile(person){
 </script>
 
 </body>
-</html>
-
-The message for parents is not showing, fix and send the correct and complete and whole code
